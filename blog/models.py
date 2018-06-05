@@ -1,7 +1,17 @@
 from django.db import models
 
 class Blog(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
-    summary = models.TextField(max_length=500)
+    body = models.TextField()
     image = models.ImageField(upload_to='images/')
+    url = models.URLField(max_length=400)
+
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        return self.body[:100]
+
+    def pub_date_pretty(self):
+        return self.pub_date.strftime('%b %e %Y')

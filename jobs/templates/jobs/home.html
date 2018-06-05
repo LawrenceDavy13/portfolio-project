@@ -2,50 +2,67 @@
 <!doctype html>
 <html lang="en">
   <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    
 
-    <title>Album example for Bootstrap</title>
+    <title>Lawrence Davy</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
   </head>
+
+  <style>
+      body,h1 {font-family: "Raleway", sans-serif}
+      body, html {height: 100%}
+      .bgimg {
+          background-image: url('https://images.pexels.com/photos/237693/pexels-photo-237693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+          min-height: 100%;
+          background-position: center;
+          background-size: cover;
+      }
+      </style>
 
   <body>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Lawrence Davy</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Lawrence Davy</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link" href="#">Twitter</a>
-                <a class="nav-item nav-link" href="#">Resume</a>
-                <a class="nav-item nav-link" href="#">Blog</a>
+                <a class="nav-item nav-link" href="https://www.linkedin.com/in/lawrence-davy-4418b7116/">Linkedin</a>
+                <a class="nav-item nav-link" href="{% static 'cv.pdf' %}">Resume</a>
+                <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+                <a class="nav-item nav-link" href="https://github.com/LawrenceDavy13">Github</a>
+
               </div>
             </div>
           </nav>
     </header>
 
-    <main role="main">
+    <!-- <main role="main">
 
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Hi, I'm Lawrence</h1>
-          <p class="lead text-muted">Hey, my name is Lawrence Davy and I love programming. It's the thrill of interactiving with machines and making them talk to each other</p>
+          <p class="lead text-muted">Hey, my name is Lawrence Davy and I love programming. It's the thrill of interacting with machines and making them talk to each other</p>
           <p>
             <a href="mailto:lawrencedavy13@gmail.com" class="btn btn-primary my-2">Email Me</a>
           </p>
+          <img src="{% static 'highres_190233862.jpeg' %}" height="" />
         </div>
-      </section>
+      </section> -->
 
-      <div class="album py-5 bg-light">
+      <!-- <div class="album py-5 bg-light">
         <div class="container">
 
           <div class="row">
@@ -58,13 +75,31 @@
                   <p class="card-text">{{job.summary}}</p>
                 </div>
               </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+            </div> -->
+            <!-- {% endfor %}
+          </div> -->
+        <!-- </div>
       </div>
 
-    </main>
+    </main> -->
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="w3-display-middle">
+          <h1 class="w3-jumbo w3-animate-top text-center">Welcome</h1>
+          <br>
+          <p class="lead text-muted text-center">Hey, my name is Lawrence Davy and I love programming. It's the thrill of interacting with machines and making them talk to each other.</p>
+          <p>
+          <br>
+          <p>
+              <a href="mailto:lawrencedavy13@gmail.com" class="btn btn-primary my-2">Email Me</a>
+          </p>
+          <br>
+          <hr class="w3-border-grey" style="margin:auto;width:40%">
+        </div>
+        <div class="w3-display-bottomleft w3-padding-large">
+          Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+        </div>
+      </div>
 
     <footer class="text-muted">
       <div class="container text-center">
