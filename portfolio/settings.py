@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # FOR POSTGRES
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'portfoliodb',
         'USER': 'aiwass',
         'PASSWORD': 'aiwass',
@@ -143,12 +143,12 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 try:
-    from . local_settings import *
+    from .local_settings import *
 except ImportError:
     pass
